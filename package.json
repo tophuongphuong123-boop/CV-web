@@ -1,0 +1,28 @@
+{
+  "name": "cv-scanner",
+  "version": "1.0.0",
+  "description": "AI-powered CV/Resume analysis tool with beautiful UI",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "scanner",
+    "analyzer",
+    "job"
+  ],
+  "author": "voanhkhoa2507",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
