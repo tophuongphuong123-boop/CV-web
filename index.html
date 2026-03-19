@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Scanner - AI-Powered Resume Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">📄 CV Scanner</h1>
+                <p class="tagline">Analyze & Optimize Your Resume</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Upload Section -->
+                <section class="upload-section">
+                    <div class="upload-card">
+                        <div class="upload-icon">📤</div>
+                        <h2>Upload Your CV</h2>
+                        <p>Supported formats: PDF, DOCX, TXT, Images (JPG, PNG)</p>
+                        
+                        <div class="drop-zone" id="dropZone">
+                            <input type="file" id="fileInput" accept=".pdf,.docx,.txt,.jpg,.jpeg,.png" hidden>
+                            <p class="drop-text">Drag & drop your CV here or <span class="click-here">click to browse</span></p>
+                        </div>
+                        
+                        <button class="btn btn-primary" id="uploadBtn">Upload CV</button>
+                        <div class="file-info" id="fileInfo"></div>
+                    </div>
+                </section>
+
+                <!-- Results Section -->
+                <section class="results-section" id="resultsSection" style="display: none;">
+                    <!-- CV Preview -->
+                    <div class="preview-card">
+                        <h3>📋 CV Preview</h3>
+                        <div class="cv-preview" id="cvPreview"></div>
+                    </div>
+
+                    <!-- Analysis Results -->
+                    <div class="analysis-card">
+                        <h3>📊 Analysis Results</h3>
+                        
+                        <!-- Overall Score -->
+                        <div class="score-container">
+                            <div class="score-circle" id="scoreCircle">
+                                <div class="score-value" id="scoreValue">0</div>
+                                <div class="score-label">/100</div>
+                            </div>
+                            <div class="score-description" id="scoreDescription"></div>
+                        </div>
+
+                        <!-- Metrics Grid -->
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon">👤</div>
+                                <div class="metric-name">Contact Info</div>
+                                <div class="metric-status" id="contactStatus">✗</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">💼</div>
+                                <div class="metric-name">Experience</div>
+                                <div class="metric-status" id="experienceStatus">✗</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">🎓</div>
+                                <div class="metric-name">Education</div>
+                                <div class="metric-status" id="educationStatus">✗</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">🛠️</div>
+                                <div class="metric-name">Skills</div>
+                                <div class="metric-status" id="skillsStatus">✗</div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Analysis -->
+                        <div class="detailed-analysis">
+                            <h4>🔍 Detailed Analysis</h4>
+                            <div class="analysis-list" id="analysisList"></div>
+                        </div>
+
+                        <!-- Recommendations -->
+                        <div class="recommendations">
+                            <h4>💡 Recommendations</h4>
+                            <div class="recommendations-list" id="recommendationsList"></div>
+                        </div>
+
+                        <!-- Keywords Found -->
+                        <div class="keywords-section">
+                            <h4>🏷️ Keywords Detected</h4>
+                            <div class="keywords-cloud" id="keywordsCloud"></div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" id="downloadBtn">📥 Download Report</button>
+                        <button class="btn btn-secondary" id="resetBtn">🔄 Scan Another CV</button>
+                    </div>
+                </section>
+
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing your CV...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 CV Scanner. All rights reserved. | Made with ❤️ for job seekers</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
